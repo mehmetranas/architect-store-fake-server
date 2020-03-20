@@ -34,6 +34,65 @@ module.exports = function () {
         architect:faker.name.firstName() + " " + faker.name.lastName()
       }
     }),
+    architects:_.times(50,function(n) {
+      return {
+        userId:n,
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        title:'Architect',
+        professionId: faker.random.arrayElement([
+          { value: "architect_msc", name: "Architect (M.S.C)" },
+          { value: "other", name: "Other" }
+        ]),
+        school: faker.random.arrayElement(['AEU','Istanbul University','Ankara University','Izmir University']),
+        company: faker.company.companyName(),
+        email: faker.internet.email(),
+        birthDate: faker.date.future(),
+        city: faker.address.city(),
+        category:['Villa','Housing','Others'],
+        country: faker.address.country(),
+        information: faker.lorem.words(5),
+        profileImageUrl: 'https://picsum.photos/id/' + faker.random.arrayElement(photos) + '/900/500',
+        agreedTerms: faker.random.boolean(),
+        allowMessages: faker.random.boolean(),
+        participateSaleCampaigns: faker.random.boolean(),
+        autoJoinCompetitions: faker.random.boolean(),
+        interestedSelling: faker.random.boolean(),
+        languageIds: faker.random.arrayElement([
+          {
+            "languageId": "de",
+            "name": "German"
+          },
+          {
+            "languageId": "en",
+            "name": "English"
+          },
+          {
+            "languageId": "es",
+            "name": "Spanish"
+          },
+          {
+            "languageId": "fr",
+            "name": "French"
+          },
+          {
+            "languageId": "it",
+            "name": "Italian"
+          },
+          {
+            "languageId": "tr",
+            "name": "Turkish"
+          },
+          {
+            "languageId": "zh",
+            "name": "Chinese"
+          }
+        ]),
+        toolIds: [],
+        tools: [],
+        projects:faker.random.number({max:20,min:0,precision:1}),
+      }
+    }),
     notifications:_.times(50,function (n) {
      return {
       "id":(n),

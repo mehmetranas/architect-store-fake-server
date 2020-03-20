@@ -5,4 +5,5 @@
 
 ## To Run Fake Server
 
-### json-server --watch //file//
+### json-server --watch startServer.js
+
